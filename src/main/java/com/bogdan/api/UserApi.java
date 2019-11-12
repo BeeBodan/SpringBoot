@@ -37,4 +37,19 @@ public class UserApi {
 
         return "main";
     }
+
+    @PostMapping("filter")
+    public String filter(@RequestParam String filter,
+                         Map<String, Object> model) {
+
+        Iterable<User> users;
+        if (filter != null && !filter.isEmpty()) {
+            users = userRepo.findByFirstName(filter);
+        } else {
+            users = userRepo.findAll();
+        }
+        model.put("users", users);
+
+        return "main";
+    }
 }
