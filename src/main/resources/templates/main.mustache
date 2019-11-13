@@ -21,22 +21,22 @@
 				color: #333;
 			}
 			html {
-				background: image-url(./images/background.png);
-				background-size: cover;
+				background: rgb(230,106,161);
+				background: linear-gradient(0deg, rgba(230,106,161,1) 8%, rgba(148,199,204,1) 49%, rgba(51,105,224,1) 98%);
 				background-attachment: fixed;
 			}
 			.menuFormUser {
 				width: 800px;
 				height: 325px;
 				margin: 50px auto 15px auto;
-				background: rgba(255, 255, 255, 0.3);
+				background: rgba(255, 255, 255, 0.6);
 			}
 			.menuHello {
 				width: 30%;
 				height: 325px;
 				padding: 16px;
-				background: url(./images/mini_background.jpg) 0 0;
-				background-size: cover;
+				background: rgb(230,106,161);
+				background: linear-gradient(0deg, rgba(230,106,161,1) 8%, rgba(148,199,204,1) 49%, rgba(51,105,224,1) 98%);
 				float: left;
 			}
 			.menuInput {
@@ -198,7 +198,7 @@
 				{{/users}}
 			</div>
 			<div class="listSeaech">
-				<form class="listForm" method="post" action="filter">
+				<form class="listForm" method="post">
 					<h3>Search user</h3>
 					<input type="text" name="filter" placeholder="Search">
 					<button class="btn" type="submit">Find</button>
