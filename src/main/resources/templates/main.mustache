@@ -162,6 +162,13 @@
 	</head>
 	<body>
 		<div class="menuFormUser">
+			<div>
+				<form action="/logout" method="post">
+					<!-- Add Cross Site Forgery Attacks (проект защиты от межсайтовой подделки запроса) -->
+					<input type="hidden" name="_csrf" value="{{_csrf.token}}">
+					<input type="submit" value="Sign Out">
+				</form>
+			</div>
 			<div class="menuHello">
 				<h1>Hello!</h1>
 				<p>This is my project written using Java, HTML / CSS and the PostgresSQL database on the Heroku server. In this project you can enter your data and it`s will appear in the list below. You can also filter the list of users.<br><br> The database is periodically cleared.</p>
@@ -173,6 +180,9 @@
 			        <input class="formItem" type="text" name="secondName" placeholder="Second Name" required/>
 			        <input class="formItem" type="number" name="age" placeholder="Age" required/>
 			        <input class="formItem" type="text" name="city" placeholder="City" required/>
+
+			        <!-- Add Cross Site Forgery Attacks (проект защиты от межсайтовой подделки запроса) -->
+					<input type="hidden" name="_csrf" value="{{_csrf.token}}">
 			        <div class="menuBtn"><button class="btn" type="submit">Add user</button></div>
 			    </form>
 			</div>
@@ -201,6 +211,9 @@
 				<form class="listForm" method="post">
 					<h3>Search user</h3>
 					<input type="text" name="filter" placeholder="Search">
+
+					<!-- Add Cross Site Forgery Attacks (проект защиты от межсайтовой подделки запроса) -->
+					<input type="hidden" name="_csrf" value="{{_csrf.token}}">
 					<button class="btn" type="submit">Find</button>
 				</form>
 			</div>
